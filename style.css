@@ -111,7 +111,7 @@ body {
   margin: 0 auto;
   padding: 0 24px 40px;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 300px;
   gap: 24px;
   align-items: start;
   position: relative;
@@ -130,7 +130,8 @@ body {
 .result-panel {
   position: sticky;
   top: 24px;
-  min-height: 520px;
+  min-height: 0;
+  align-self: start;
   background: linear-gradient(165deg, var(--pine-deep) 0%, var(--pine) 100%);
   border: none;
   box-shadow: var(--shadow-lift);
@@ -348,7 +349,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
    ========================================================= */
 .result-inner {
   width: 100%;
-  padding: 40px 32px;
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,7 +360,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .state { width: 100%; display: flex; flex-direction: column; align-items: center; }
 
 /* gauge */
-.gauge { width: 100%; max-width: 260px; overflow: visible; margin-bottom: 8px; }
+.gauge { width: 100%; max-width: 190px; overflow: visible; margin-bottom: 4px; }
 .gauge-track {
   fill: none;
   stroke: rgba(255,255,255,0.14);
@@ -380,27 +381,27 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 
 .idle-label {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 16px;
   font-style: italic;
   color: #EAF3EE;
-  margin: 8px 0 4px;
+  margin: 4px 0 4px;
 }
 .idle-copy {
-  font-size: 13.5px;
+  font-size: 12px;
   color: rgba(234,243,238,0.65);
-  max-width: 230px;
+  max-width: 220px;
   margin: 0;
 }
 
 /* loading */
-.state-loading { padding: 40px 0; }
+.state-loading { padding: 20px 0; }
 .pulse-ring {
-  width: 84px;
-  height: 84px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: 2px solid rgba(255,255,255,0.25);
   position: relative;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 .pulse-ring::before, .pulse-ring::after {
   content: "";
@@ -418,10 +419,10 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .loading-label {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 19px;
+  font-size: 16px;
   margin: 0 0 4px;
 }
-.loading-copy { font-size: 13px; color: rgba(234,243,238,0.6); margin: 0; }
+.loading-copy { font-size: 12px; color: rgba(234,243,238,0.6); margin: 0; }
 
 /* result */
 .score-readout {
@@ -433,34 +434,35 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .score-number {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 52px;
+  font-size: 36px;
   color: #fff;
   letter-spacing: -0.02em;
 }
-.score-max { font-family: var(--font-mono); font-size: 16px; color: rgba(234,243,238,0.55); }
+.score-max { font-family: var(--font-mono); font-size: 12px; color: rgba(234,243,238,0.55); }
 
 .score-band {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 19px;
-  margin: 2px 0 10px;
+  font-size: 15px;
+  margin: 2px 0 8px;
 }
 .score-context {
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.45;
   color: rgba(234,243,238,0.7);
-  max-width: 250px;
-  margin: 0 0 22px;
+  max-width: 230px;
+  margin: 0 0 14px;
 }
 
 .reset-btn {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 12px;
   color: var(--pine-deep);
   background: #fff;
   border: none;
   border-radius: var(--radius-sm);
-  padding: 11px 22px;
+  padding: 8px 16px;
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.15s ease;
 }
@@ -468,10 +470,10 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .reset-btn:active { transform: scale(0.98); }
 
 /* error state */
-.state-error { padding: 28px 0; }
+.state-error { padding: 14px 0; }
 .error-icon {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(217,83,79,0.18);
   color: #FF9B95;
@@ -491,10 +493,10 @@ input:invalid:not(:placeholder-shown):not(:focus) {
   margin: 0 0 6px;
 }
 .error-copy {
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(234,243,238,0.7);
-  max-width: 250px;
-  margin: 0 0 22px;
+  max-width: 230px;
+  margin: 0 0 14px;
 }
 
 /* =========================================================
@@ -519,7 +521,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
    ========================================================= */
 @media (max-width: 920px) {
   .layout { grid-template-columns: 1fr; }
-  .result-panel { position: static; min-height: 420px; }
+  .result-panel { position: static; min-height: 0; max-width: 340px; width: 100%; margin: 0 auto; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
