@@ -9,7 +9,6 @@ https://mental-health-score-predictor-2-i1qk.onrender.com/
 Backend API: API Documentation (Swagger UI)
 https://mental-health-score-predictor-1-dafc.onrender.com/docs
 
-**[Try the Live Application](https://mental-health-score-predictor-2-i1qk.onrender.com/)**
 
 ## ✨ Features
 
